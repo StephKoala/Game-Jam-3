@@ -8,19 +8,22 @@ public class EnemyController : MonoBehaviour
     //Declarations
     public float movementSpeed;
     public List<string> enemyColor;
-    public List<SpriteRenderer> enemyIdle;
+    public List<Sprite> enemyIdle;
     private Transform playerTransform;
-
 
     //Enemy Traits
     private SpriteRenderer enemySpriteRenderer;
     private string color;
 
+    //Sounds
+    public AudioClip hitEnemyAudioClip;
+
     // Start is called before the first frame update
     void Start()
     {
         int index = Random.Range(0, enemyIdle.Count);
-        enemySpriteRenderer = enemyIdle[index];
+        enemySpriteRenderer = GetComponent<SpriteRenderer>();
+        enemySpriteRenderer.sprite = enemyIdle[index];
         color = enemyColor[index];
 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
@@ -40,10 +43,11 @@ public class EnemyController : MonoBehaviour
 
     private void ViewText()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             if(GameManager.instance.powerText.text == color)
             {
+                AudioManager.instance.PlaySFX(hitEnemyAudioClip);
                 Destroy(gameObject);
             }
         }

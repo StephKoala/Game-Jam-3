@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5263069894218315762}
   - component: {fileID: 5082336228932884977}
   - component: {fileID: 7658295147594780801}
+  - component: {fileID: 3819382350541314230}
   m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Untagged
+  m_Name: EnemyTorch
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,11 +72,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1271884645
-  m_SortingLayer: 2
+  m_SortingLayerID: 823223227
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -747491796, guid: 8cd3d98c1da6ea746af0e1f7b583a28a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -97,8 +98,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bc84ab6db4c41449cf96a1d1e2f7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1
-  enemyClass: []
-  enemyColor: []
-  enemyIdle: []
-  playerTransform: {fileID: 0}
+  movementSpeed: 0.5
+  enemyColor:
+  - RED
+  - BLUE
+  - GREEN
+  - ORANGE
+  - PURPLE
+  - YELLOW
+  enemyIdle:
+  - {fileID: -747491796, guid: 8cd3d98c1da6ea746af0e1f7b583a28a, type: 3}
+  - {fileID: -1031156243, guid: fcba281f21c289b419f2ad1250b48631, type: 3}
+  - {fileID: 144262440, guid: 6c960311d25edf942bccdc2226ce03e2, type: 3}
+  - {fileID: -1161677233, guid: 9dec305159fef514397bd82c0e6663dd, type: 3}
+  - {fileID: -855526800, guid: ac17cd69c04e0bd418b4e7dfeb222b19, type: 3}
+  - {fileID: 601930992, guid: 3c4fd4f018a1c314a9862aff1a0247dc, type: 3}
+  hitEnemyAudioClip: {fileID: 8300000, guid: 0c008ee3ee72a4362a35be25fa5de043, type: 3}
+--- !u!61 &3819382350541314230
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358697397372290147}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3, y: 3}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
