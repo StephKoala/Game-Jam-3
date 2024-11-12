@@ -605,7 +605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifes: 5
-  collisionAudioClip: {fileID: 0}
+  collisionAudioClip: {fileID: 8300000, guid: 7bef0064f8567430cac22499c6b93d4f, type: 3}
 --- !u!61 &511512134
 BoxCollider2D:
   m_ObjectHideFlags: 0
