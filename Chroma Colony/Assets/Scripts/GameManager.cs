@@ -39,7 +39,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TextUpdate();
+        if (!isWriteBlock)
+        {
+            TextUpdate();
+        } 
     }
 
     //PauseGame
