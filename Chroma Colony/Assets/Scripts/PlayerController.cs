@@ -8,6 +8,10 @@ public class PlayerController : MonoBehaviour
     //Declarations
     public int lifes;
     private SpawnEnemies spawnEnemiesScript;
+    private Chronometer chronometerScript;
+
+    //Sounds
+    public AudioClip collisionAudioClip;
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +24,10 @@ public class PlayerController : MonoBehaviour
     {
         if ( lifes <= 0)
         {
-            spawnEnemiesScript = GameObject.FindGameObjectWithTag("Player").GetComponent<SpawnEnemies>();
+            spawnEnemiesScript = GameObject.FindGameObjectWithTag("Enemy").GetComponent<SpawnEnemies>();
+            chronometerScript = GameObject.FindGameObjectWithTag("Chronometer").GetComponent<Chronometer>();
             spawnEnemiesScript.gameOver = true;
+            chronometerScript.gameOver = true;
         }
     }
 
@@ -30,6 +36,7 @@ public class PlayerController : MonoBehaviour
         if(collision.collider.CompareTag("Enemy"))
         {
             lifes--;
+            AudioManager.instance.PlaySFX(collisionAudioClip);
             Destroy(collision.gameObject);
         }
     }
