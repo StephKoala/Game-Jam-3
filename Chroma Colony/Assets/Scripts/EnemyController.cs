@@ -27,6 +27,8 @@ public class EnemyController : MonoBehaviour
         color = enemyColor[index];
 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+
+        FlipSprite();
     }
 
     // Update is called once per frame
@@ -34,6 +36,14 @@ public class EnemyController : MonoBehaviour
     {
         Movment();
         ViewText();
+    }
+
+    private void FlipSprite()
+    {
+        if (transform.position.x > 0) 
+        {
+            enemySpriteRenderer.flipX = true;
+        }
     }
 
     private void Movment()
