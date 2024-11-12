@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         if ( lifes <= 0)
         {
-            spawnEnemiesScript = GameObject.FindGameObjectWithTag("Enemy").GetComponent<SpawnEnemies>();
+            spawnEnemiesScript = GameObject.FindGameObjectWithTag("Spawn").GetComponent<SpawnEnemies>();
             chronometerScript = GameObject.FindGameObjectWithTag("Chronometer").GetComponent<Chronometer>();
             spawnEnemiesScript.gameOver = true;
             chronometerScript.gameOver = true;
