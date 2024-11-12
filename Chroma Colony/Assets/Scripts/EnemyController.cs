@@ -7,14 +7,22 @@ public class EnemyController : MonoBehaviour
 {
     //Declarations
     public float movementSpeed;
-    public List<string> enemyClass;
     public List<string> enemyColor;
-    public List<GameObject> enemyIdle;
-    public Transform playerTransform;
+    public List<SpriteRenderer> enemyIdle;
+    private Transform playerTransform;
+
+
+    //Enemy Traits
+    private SpriteRenderer enemySpriteRenderer;
+    private string color;
 
     // Start is called before the first frame update
     void Start()
     {
+        int index = Random.Range(0, enemyIdle.Count);
+        enemySpriteRenderer = enemyIdle[index];
+        color = enemyColor[index];
+
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -34,7 +42,7 @@ public class EnemyController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(GameManager.instance.powerText.text == "RED")
+            if(GameManager.instance.powerText.text == color)
             {
                 Destroy(gameObject);
             }
