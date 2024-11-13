@@ -116,7 +116,7 @@ MonoBehaviour:
   - {fileID: 601930992, guid: 3c4fd4f018a1c314a9862aff1a0247dc, type: 3}
   enemyAnimators:
   - {fileID: 9100000, guid: 5b34922511abd4940af71d5ce0857f0b, type: 2}
-  - {fileID: 9100000, guid: 96ecd034236bba243bb3d2b22d7debfc, type: 2}
+  - {fileID: 9100000, guid: 834b208e0e2724440b2b8800cf804a68, type: 2}
   - {fileID: 9100000, guid: 96ecd034236bba243bb3d2b22d7debfc, type: 2}
   - {fileID: 9100000, guid: b024a8c0be5dee34993247b960646fff, type: 2}
   - {fileID: 9100000, guid: e79d35b527648a2479891d6bf496a576, type: 2}
