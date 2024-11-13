@@ -7,6 +7,9 @@ public class TimeToDraw : MonoBehaviour
     //Declarations
     public bool gameOver;
     public List<GameObject> buildings;
+    public List<GameObject> npcs;
+    public List<GameObject> objects;
+    public List<GameObject> sheeps;
 
     //Sounds
     public AudioClip buildingAudioClip;
@@ -31,6 +34,9 @@ public class TimeToDraw : MonoBehaviour
         {
             AudioManager.instance.PlaySFX(buildingAudioClip);
             buildings[index].SetActive(true);
+            npcs[index].SetActive(true);
+            objects[index].SetActive(true);
+            sheeps[index].SetActive(true);
             index++;
             yield return new WaitForSeconds(20);
         }  
