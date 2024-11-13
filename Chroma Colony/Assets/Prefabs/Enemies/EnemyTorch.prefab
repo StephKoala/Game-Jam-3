@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5082336228932884977}
   - component: {fileID: 7658295147594780801}
   - component: {fileID: 3819382350541314230}
+  - component: {fileID: -7039793189864106627}
   m_Layer: 0
   m_Name: EnemyTorch
   m_TagString: Enemy
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 823223227
-  m_SortingLayer: 1
+  m_SortingLayer: 14
   m_SortingOrder: 0
   m_Sprite: {fileID: -747491796, guid: 8cd3d98c1da6ea746af0e1f7b583a28a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -113,6 +114,13 @@ MonoBehaviour:
   - {fileID: -1161677233, guid: 9dec305159fef514397bd82c0e6663dd, type: 3}
   - {fileID: -855526800, guid: ac17cd69c04e0bd418b4e7dfeb222b19, type: 3}
   - {fileID: 601930992, guid: 3c4fd4f018a1c314a9862aff1a0247dc, type: 3}
+  enemyAnimators:
+  - {fileID: 9100000, guid: 5b34922511abd4940af71d5ce0857f0b, type: 2}
+  - {fileID: 9100000, guid: 834b208e0e2724440b2b8800cf804a68, type: 2}
+  - {fileID: 9100000, guid: 96ecd034236bba243bb3d2b22d7debfc, type: 2}
+  - {fileID: 9100000, guid: b024a8c0be5dee34993247b960646fff, type: 2}
+  - {fileID: 9100000, guid: e79d35b527648a2479891d6bf496a576, type: 2}
+  - {fileID: 9100000, guid: e33f0ee7d7b79dd488e69eefaa42fc08, type: 2}
   hitEnemyAudioClip: {fileID: 8300000, guid: 0c008ee3ee72a4362a35be25fa5de043, type: 3}
 --- !u!61 &3819382350541314230
 BoxCollider2D:
@@ -159,3 +167,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &-7039793189864106627
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358697397372290147}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 834b208e0e2724440b2b8800cf804a68, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5082336228932884977}
   - component: {fileID: 7658295147594780801}
   - component: {fileID: 4819778157705425504}
+  - component: {fileID: 5112753168361917896}
   m_Layer: 0
   m_Name: EnemyTNT
   m_TagString: Enemy
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 823223227
-  m_SortingLayer: 1
+  m_SortingLayer: 14
   m_SortingOrder: 0
   m_Sprite: {fileID: -1585095347, guid: ffdb2d9df89d8724488cdd6f05e20cc9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -113,6 +114,13 @@ MonoBehaviour:
   - {fileID: -1415067525, guid: eae51647170ffe447ad83c4a980e52e4, type: 3}
   - {fileID: 1202938302, guid: a739841ab59a7ca4399fb745c1cea368, type: 3}
   - {fileID: -2041807574, guid: 749546845373b094584cea8866acb698, type: 3}
+  enemyAnimators:
+  - {fileID: 9100000, guid: 0a58544d817b9c741bd186da0d754f92, type: 2}
+  - {fileID: 9100000, guid: e165dcb62bdb3854fb434994ddcb7860, type: 2}
+  - {fileID: 9100000, guid: 012451bf35f09fb44876bdb44d7cf55d, type: 2}
+  - {fileID: 9100000, guid: 58caad0c3f0eac8479a9727e7c6819e7, type: 2}
+  - {fileID: 9100000, guid: a42441b6f739d6042a6c4f44c4fabfc1, type: 2}
+  - {fileID: 9100000, guid: fafb9215212f96a4fbac6c808e9e4cc9, type: 2}
   hitEnemyAudioClip: {fileID: 8300000, guid: 0c008ee3ee72a4362a35be25fa5de043, type: 3}
 --- !u!61 &4819778157705425504
 BoxCollider2D:
@@ -159,3 +167,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &5112753168361917896
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358697397372290147}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
