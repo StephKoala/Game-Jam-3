@@ -94,6 +94,9 @@ TagManager:
   - name: Enemy
     uniqueID: 1271884645
     locked: 0
+  - name: NPC
+    uniqueID: 3121452195
+    locked: 0
   - name: Explosion
     uniqueID: 2146467889
     locked: 0

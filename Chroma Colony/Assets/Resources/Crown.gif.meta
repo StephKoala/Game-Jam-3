@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4c7c8b8d547065b4aa7c0a32ff99ea8c
+guid: 37b39f70fc30a884f8fadbc583efc285
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GoldMine_Active_0
+      name: Crown_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 192
-        height: 128
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d00a8348f52e4a409524a8cbd8c4e21
-      internalID: 1115267372
+      spriteID: 4b3e42aceece4fe45a056439d7bf036e
+      internalID: -1537251770
       vertices: []
       indices: 
       edges: []
@@ -146,7 +146,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 19c903091f65da5448d202a8a7ba937b
+    spriteID: d235c5d57f3eb7b4cacc719923f2b45c
     internalID: 0
     vertices: []
     indices: 
@@ -154,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GoldMine_Active_0: 1115267372
+      Crown_0: -1537251770
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
