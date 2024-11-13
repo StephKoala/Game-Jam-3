@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEditor.Animations;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,10 +19,14 @@ public class PlayerController : MonoBehaviour
     //Sounds
     public AudioClip collisionAudioClip;
 
+    //animations 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         isLive = true;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -39,6 +44,7 @@ public class PlayerController : MonoBehaviour
             levelManagerScript.gameOver = true;
             isLive = false;
             //Animation
+            animator.SetBool("onDeath", true);
         }
     }
 
@@ -51,6 +57,7 @@ public class PlayerController : MonoBehaviour
             //AnimationExplosion
             StartCoroutine(DestroyEnemy());
             //Instantiate(explosion, transform.position, explosion.rotation);
+            GameObject explosionInstance = Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
         }
     }
@@ -58,6 +65,5 @@ public class PlayerController : MonoBehaviour
     IEnumerator DestroyEnemy()
     {
         yield return new WaitForSeconds(3);
-        Destroy(gameObject);
     }
 }

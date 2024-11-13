@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     public List<Sprite> enemyIdle;
     public List<AnimatorController> enemyAnimators;
     private Transform playerTransform;
-    private bool isLive;
+    public bool isLive;
 
     // Características del enemigo
     private SpriteRenderer enemySpriteRenderer;
@@ -34,7 +34,7 @@ public class EnemyController : MonoBehaviour
         enemySpriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>(); // Obtenemos el Animator del enemigo
         color = enemyColor[index];
-        animator.runtimeAnimatorController = enemyAnimators[index]; 
+        animator.runtimeAnimatorController = enemyAnimators[index];
 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
@@ -73,7 +73,8 @@ public class EnemyController : MonoBehaviour
             {
                 AudioManager.instance.PlaySFX(hitEnemyAudioClip);
                 isLive = false;
-                //Animation
+                // animation
+                animator.SetBool("onDeath", true);
                 StartCoroutine(DestroyEnemy());
             }
         }
@@ -81,8 +82,7 @@ public class EnemyController : MonoBehaviour
 
     IEnumerator DestroyEnemy()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2); 
         Destroy(gameObject);
     }
 }
-
