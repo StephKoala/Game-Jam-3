@@ -29,7 +29,7 @@ public class EnemyController : MonoBehaviour
         enemySpriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>(); // Obtenemos el Animator del enemigo
         color = enemyColor[index];
-        animator.runtimeAnimatorController = enemyAnimators[index];
+        animator.runtimeAnimatorController = enemyAnimators[index]; 
 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
@@ -68,15 +68,9 @@ public class EnemyController : MonoBehaviour
             if (GameManager.instance.powerText.text == color)
             {
                 AudioManager.instance.PlaySFX(hitEnemyAudioClip);
-                animator.SetTrigger("Die"); // Activa el trigger de muerte en el Animator
+                Destroy(gameObject);
             }
         }
-    }
-
-    // Esta función será llamada por un evento de animación cuando termine la animación de muerte
-    public void OnDeathAnimationComplete()
-    {
-        Destroy(gameObject); // Destruye el objeto enemigo
     }
 }
 
