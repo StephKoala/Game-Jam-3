@@ -7,14 +7,15 @@ using UnityEngine.UI;
 public class TextFadeIn : MonoBehaviour {
     private TextMeshProUGUI textMesh;
 
-    private float fadeInDuration = 0.5f;
-    private float startAfter = 1.0f;
+    [SerializeField] private float fadeInDuration = 0.5f;
+    [SerializeField] private float startAfter = 1.0f;
     private float startFadingTime;
     private float elapsedTime = 0f;
 
     private bool transitionCompleted = false;
 
-    private void OnEnable() {
+    private void Start() {
+        //image = GetComponent<Image>();
         textMesh = GetComponent<TextMeshProUGUI>();
         textMesh.alpha = 0f; 
         startFadingTime = Time.time + startAfter; // Set the start fading time to 1 second from now
@@ -35,9 +36,5 @@ public class TextFadeIn : MonoBehaviour {
             }
         }
 
-    }
-
-    public void EnableTransition() {
-        transitionCompleted = false;
     }
 }

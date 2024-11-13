@@ -9,12 +9,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     //Declarations
-    public bool isPaused;
+    private bool isPaused;
 
     //Create instance
     public static GameManager instance;
-
-    public GameObject mainMenu;
 
     private void Awake()
     {
@@ -44,9 +42,6 @@ public class GameManager : MonoBehaviour
     //PauseGame
     public void PauseGame()
     {
-        Time.timeScale = 0f;
-
-        /*
         if (!isPaused)
         {
             Time.timeScale = 0;
@@ -56,29 +51,7 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1;
         }
         isPaused = !isPaused;
-        */
     }
 
-    //PauseGame
-    public void UnpauseGame()
-    {
-        Time.timeScale = 1f;
-
-        /*
-        if (!isPaused)
-        {
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Time.timeScale = 1;
-        }
-        isPaused = !isPaused;
-        */
-    }
-
-    public void SetMainMenuToActive() {
-        mainMenu.SetActive(true);
-    }
     
 }
