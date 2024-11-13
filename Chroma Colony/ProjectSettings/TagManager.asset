@@ -9,6 +9,7 @@ TagManager:
   - Chronometer
   - LevelManager
   - Draw
+  - MainMenu
   layers:
   - Default
   - TransparentFX
@@ -46,6 +47,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BlurryBackgnd
+    uniqueID: 1912682749
+    locked: 0
   - name: Water
     uniqueID: 3301944283
     locked: 0
@@ -82,15 +86,18 @@ TagManager:
   - name: Deco4
     uniqueID: 430833233
     locked: 0
-  - name: Enemy
-    uniqueID: 1271884645
+  - name: Building
+    uniqueID: 277422965
+    locked: 0
+  - name: Castle
+    uniqueID: 472014379
     locked: 0
   - name: Player
     uniqueID: 823223227
     locked: 0
-  - name: Building
-    uniqueID: 277422965
+  - name: Enemy
+    uniqueID: 1271884645
     locked: 0
   - name: Explosion
-    uniqueID: 472014379
+    uniqueID: 2146467889
     locked: 0
