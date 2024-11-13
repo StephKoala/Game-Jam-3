@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifes: 5
+  explosion: {fileID: 729599332676927559, guid: 99bc0a6a4469d5f4ab699f0d66ae1bc8, type: 3}
   collisionAudioClip: {fileID: 8300000, guid: 7bef0064f8567430cac22499c6b93d4f, type: 3}
 --- !u!61 &9214964695609249770
 BoxCollider2D:

@@ -26,12 +26,13 @@ public class TimeToDraw : MonoBehaviour
     IEnumerator DrawBuildings()
     {
         int index = 0;
+        yield return new WaitForSeconds(20);
         while (!gameOver && index < buildings.Count)
         {
-            yield return new WaitForSeconds(20);
             AudioManager.instance.PlaySFX(buildingAudioClip);
             buildings[index].SetActive(true);
             index++;
+            yield return new WaitForSeconds(20);
         }  
     }
 }
