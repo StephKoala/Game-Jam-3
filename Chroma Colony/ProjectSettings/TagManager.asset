@@ -44,12 +44,51 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
-    uniqueID: 823223227
+  - name: Water
+    uniqueID: 3301944283
+    locked: 0
+  - name: Foam
+    uniqueID: 392171281
+    locked: 0
+  - name: Sand
+    uniqueID: 1380489509
+    locked: 0
+  - name: Grass
+    uniqueID: 3259179495
+    locked: 0
+  - name: Rocks
+    uniqueID: 2212388727
+    locked: 0
+  - name: Water-trees
+    uniqueID: 3889336235
+    locked: 0
+  - name: Trees
+    uniqueID: 768404731
+    locked: 0
+  - name: Deco
+    uniqueID: 1047955349
+    locked: 0
+  - name: Deco1
+    uniqueID: 50385025
+    locked: 0
+  - name: Deco2
+    uniqueID: 2139713919
+    locked: 0
+  - name: Deco3
+    uniqueID: 1761359789
+    locked: 0
+  - name: Deco4
+    uniqueID: 430833233
     locked: 0
   - name: Enemy
     uniqueID: 1271884645
     locked: 0
+  - name: Player
+    uniqueID: 823223227
+    locked: 0
   - name: Building
     uniqueID: 277422965
+    locked: 0
+  - name: Castle
+    uniqueID: 472014379
     locked: 0
