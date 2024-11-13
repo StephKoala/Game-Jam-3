@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     public List<Sprite> enemyIdle;
     public List<AnimatorController> enemyAnimators;
     private Transform playerTransform;
+    private bool isLive;
 
     // Características del enemigo
     private SpriteRenderer enemySpriteRenderer;
@@ -22,9 +23,13 @@ public class EnemyController : MonoBehaviour
     // Sonidos
     public AudioClip hitEnemyAudioClip;
 
+    //TextColor
+    private LevelManager levelManagerScript;
+
     // Start se llama antes de la primera actualización del frame
     void Start()
     {
+        isLive = true;
         int index = Random.Range(0, enemyColor.Count);
         enemySpriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>(); // Obtenemos el Animator del enemigo
@@ -34,15 +39,15 @@ public class EnemyController : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
         FlipSprite();
-
-        // Iniciar en la animación Idle
-        animator.Play("Idle");
     }
 
     // Update se llama una vez por frame
     void Update()
     {
-        Movment();
+        if (isLive)
+        {
+            Movment();
+        }
         ViewText();
     }
 
@@ -56,8 +61,6 @@ public class EnemyController : MonoBehaviour
 
     private void Movment()
     {
-        // Cambiamos a la animación de movimiento cuando el enemigo se mueve
-        animator.SetBool("isMoving", true); // Activa la animación de movimiento
         transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, movementSpeed * Time.deltaTime);
     }
 
@@ -65,12 +68,21 @@ public class EnemyController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            if (GameManager.instance.powerText.text == color)
+            levelManagerScript = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
+            if (levelManagerScript.powerText.text == color)
             {
                 AudioManager.instance.PlaySFX(hitEnemyAudioClip);
-                Destroy(gameObject);
+                isLive = false;
+                //Animation
+                StartCoroutine(DestroyEnemy());
             }
         }
+    }
+
+    IEnumerator DestroyEnemy()
+    {
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
     }
 }
 
