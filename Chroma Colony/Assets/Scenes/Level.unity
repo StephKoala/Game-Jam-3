@@ -5395,6 +5395,7 @@ MonoBehaviour:
   - {fileID: 1968061709}
   - {fileID: 628470858}
   - {fileID: 1528893030}
+  buildingAudioClip: {fileID: 8300000, guid: df729d213c4be44a9b55cd109f5cd4f9, type: 3}
 --- !u!4 &829615934
 Transform:
   m_ObjectHideFlags: 0
@@ -14269,3 +14270,4 @@ SceneRoots:
   - {fileID: 1736835863}
   - {fileID: 1403514534}
   - {fileID: 829615934}
+  - {fileID: 1240850970}
