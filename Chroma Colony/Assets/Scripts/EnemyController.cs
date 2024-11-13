@@ -1,37 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Build.Content;
 using UnityEngine;
+using UnityEditor.Animations;
 
 public class EnemyController : MonoBehaviour
 {
-    //Declarations
+    // Declaraciones
     public float movementSpeed;
     public List<string> enemyColor;
     public List<Sprite> enemyIdle;
+    public List<AnimatorController> enemyAnimators;
     private Transform playerTransform;
 
-    //Enemy Traits
+    // Características del enemigo
     private SpriteRenderer enemySpriteRenderer;
     private string color;
 
-    //Sounds
+    // Referencia al Animator
+    private Animator animator;
+
+    // Sonidos
     public AudioClip hitEnemyAudioClip;
 
-    // Start is called before the first frame update
+    // Start se llama antes de la primera actualización del frame
     void Start()
     {
-        int index = Random.Range(0, enemyIdle.Count);
+        int index = Random.Range(0, enemyColor.Count);
         enemySpriteRenderer = GetComponent<SpriteRenderer>();
-        enemySpriteRenderer.sprite = enemyIdle[index];
+        animator = GetComponent<Animator>(); // Obtenemos el Animator del enemigo
         color = enemyColor[index];
+        animator.runtimeAnimatorController = enemyAnimators[index]; 
 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
         FlipSprite();
+
+        // Iniciar en la animación Idle
+        animator.Play("Idle");
     }
 
-    // Update is called once per frame
+    // Update se llama una vez por frame
     void Update()
     {
         Movment();
@@ -40,7 +48,7 @@ public class EnemyController : MonoBehaviour
 
     private void FlipSprite()
     {
-        if (transform.position.x > 0) 
+        if (transform.position.x > 0)
         {
             enemySpriteRenderer.flipX = true;
         }
@@ -48,6 +56,8 @@ public class EnemyController : MonoBehaviour
 
     private void Movment()
     {
+        // Cambiamos a la animación de movimiento cuando el enemigo se mueve
+        animator.SetBool("isMoving", true); // Activa la animación de movimiento
         transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, movementSpeed * Time.deltaTime);
     }
 
@@ -55,7 +65,7 @@ public class EnemyController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            if(GameManager.instance.powerText.text == color)
+            if (GameManager.instance.powerText.text == color)
             {
                 AudioManager.instance.PlaySFX(hitEnemyAudioClip);
                 Destroy(gameObject);
@@ -63,3 +73,4 @@ public class EnemyController : MonoBehaviour
         }
     }
 }
+
