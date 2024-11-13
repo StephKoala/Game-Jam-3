@@ -16,6 +16,10 @@ public class PlayerController : MonoBehaviour
     private bool isLive;
     public GameObject explosion;
 
+    //Lifes
+    private int index;
+    public List<GameObject> lifesHearth;
+
     //Sounds
     public AudioClip collisionAudioClip;
 
@@ -26,6 +30,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         isLive = true;
+        index = 5;
         animator = GetComponent<Animator>();
     }
 
@@ -52,7 +57,14 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.collider.CompareTag("Enemy"))
         {
+            index--;
             lifes--;
+
+            if(index >= 0)
+            {
+                lifesHearth[index].SetActive(false);
+            }
+
             AudioManager.instance.PlaySFX(collisionAudioClip);
             //AnimationExplosion
             StartCoroutine(DestroyEnemy());
