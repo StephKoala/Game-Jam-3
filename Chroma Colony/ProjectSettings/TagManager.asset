@@ -9,6 +9,7 @@ TagManager:
   - Chronometer
   - LevelManager
   - Draw
+  - MainMenu
   layers:
   - Default
   - TransparentFX
@@ -45,6 +46,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BlurryBackgnd
+    uniqueID: 1912682749
     locked: 0
   - name: Water
     uniqueID: 3301944283
