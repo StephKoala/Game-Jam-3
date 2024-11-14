@@ -1,13 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class MainMenu : MonoBehaviour 
 {
 
     //Create instance
     public static MainMenu instance;
+    public GameObject gameOverUI;
 
     private void Awake()
     {
@@ -29,4 +32,8 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void SetGameOverToActive()
+    {
+        gameOverUI.SetActive(true);
+    }
 }

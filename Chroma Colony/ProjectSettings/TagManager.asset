@@ -9,6 +9,8 @@ TagManager:
   - Chronometer
   - LevelManager
   - Draw
+  - TextUI
+  - GameOver
   layers:
   - Default
   - TransparentFX

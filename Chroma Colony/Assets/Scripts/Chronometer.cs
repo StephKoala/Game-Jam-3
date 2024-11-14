@@ -31,4 +31,10 @@ public class Chronometer : MonoBehaviour
             timerText.text = string.Format("{00:00}:{01:00}", minTime, secTime);
         }
     }
+
+    public void ResetChronometer()
+    {
+        timeLeftInSeconds = 0;
+        gameOver = false;
+    }
 }
