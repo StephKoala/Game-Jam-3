@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
             isLive = false;
             //Animation
             animator.SetBool("onDeath", true);
+            Time.timeScale = 0.0f;
         }
     }
 
