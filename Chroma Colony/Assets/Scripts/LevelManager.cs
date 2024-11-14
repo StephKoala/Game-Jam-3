@@ -24,9 +24,14 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isWriteBlock && !gameOver)
+        if (!isWriteBlock && !gameOver && powerText.text.Length < 6)
         {
             TextUpdate();
+        }
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            isWriteBlock = true;
+            StartCoroutine(TimeToWrite());
         }
     }
 
@@ -161,11 +166,6 @@ public class LevelManager : MonoBehaviour
         {
             powerText.text = powerText.text + "M";
             AudioManager.instance.PlaySFX(keyDownAudioClip);
-        }
-        else if (Input.GetKeyDown(KeyCode.Return))
-        {
-            isWriteBlock = true;
-            StartCoroutine(TimeToWrite());
         }
     }
 
