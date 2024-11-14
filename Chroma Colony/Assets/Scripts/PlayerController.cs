@@ -37,7 +37,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ( lifes <= 0)
+        CheckLifes();
+    }
+
+    private void CheckLifes()
+    {
+        if (lifes <= 0 && isLive)
         {
             spawnEnemiesScript = GameObject.FindGameObjectWithTag("Spawn").GetComponent<SpawnEnemies>();
             chronometerScript = GameObject.FindGameObjectWithTag("Chronometer").GetComponent<Chronometer>();
@@ -48,6 +53,7 @@ public class PlayerController : MonoBehaviour
             timeToDrawScript.gameOver = true;
             levelManagerScript.gameOver = true;
             MainMenu.instance.SetGameOverToActive();
+            AudioManager.instance.StopMusic();
             isLive = false;
             //Animation
             animator.SetBool("onDeath", true);
