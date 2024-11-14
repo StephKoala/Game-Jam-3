@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -17,6 +18,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         isWriteBlock = false;
+        powerText = GameObject.FindGameObjectWithTag("TextUI").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame

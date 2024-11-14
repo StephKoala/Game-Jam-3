@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
             chronometerScript.gameOver = true;
             timeToDrawScript.gameOver = true;
             levelManagerScript.gameOver = true;
+            MainMenu.instance.SetGameOverToActive();
             isLive = false;
             //Animation
             animator.SetBool("onDeath", true);

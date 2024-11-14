@@ -74,10 +74,4 @@ public class GameManager : MonoBehaviour
         isPaused = !isPaused;
         */
     }
-
-    public void SetMainMenuToActive() {
-        mainMenu.SetActive(true);
-    }
-
-
 }
