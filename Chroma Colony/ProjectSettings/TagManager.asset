@@ -9,6 +9,7 @@ TagManager:
   - Chronometer
   - LevelManager
   - Draw
+  - TextUI
   layers:
   - Default
   - TransparentFX

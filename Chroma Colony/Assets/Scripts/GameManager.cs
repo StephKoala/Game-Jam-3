@@ -75,9 +75,4 @@ public class GameManager : MonoBehaviour
         */
     }
 
-    public void SetMainMenuToActive() {
-        mainMenu.SetActive(true);
-    }
-
-
 }
