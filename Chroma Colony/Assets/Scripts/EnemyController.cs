@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.Animations;
+//using UnityEditor.Animations;
 
 public class EnemyController : MonoBehaviour
 {
@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     public float movementSpeed;
     public List<string> enemyColor;
     public List<Sprite> enemyIdle;
-    public List<AnimatorController> enemyAnimators;
+    public List<RuntimeAnimatorController> enemyAnimators;
     private Transform playerTransform;
     public bool isLive;
 
