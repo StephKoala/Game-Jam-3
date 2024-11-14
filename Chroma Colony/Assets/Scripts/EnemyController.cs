@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
     private Transform playerTransform;
     public bool isLive;
 
-    // Características del enemigo
+    // CaracterÃ­sticas del enemigo
     private SpriteRenderer enemySpriteRenderer;
     private string color;
 
@@ -25,7 +25,7 @@ public class EnemyController : MonoBehaviour
     //TextColor
     private LevelManager levelManagerScript;
 
-    // Start se llama antes de la primera actualización del frame
+    // Start se llama antes de la primera actualizaciÃ³n del frame
     void Start()
     {
         isLive = true;
